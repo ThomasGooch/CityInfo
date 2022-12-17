@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CityInfo.API.Models;
 using CityInfo.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
@@ -9,6 +10,7 @@ using System.Text.Json;
 namespace CityInfo.API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class CitiesController : ControllerBase
     {
