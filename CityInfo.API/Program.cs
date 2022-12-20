@@ -54,6 +54,13 @@ builder.Services.AddAuthentication("Bearer")
     }
     );
 
+builder.Services.AddApiVersioning(setupActions =>
+{
+    setupActions.AssumeDefaultVersionWhenUnspecified = true;
+    setupActions.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
+    setupActions.ReportApiVersions = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
